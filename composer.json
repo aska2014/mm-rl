@@ -4,7 +4,13 @@
 	"keywords": ["framework", "laravel"],
 	"license": "MIT",
 	"require": {
-		"laravel/framework": "4.1.*"
+		"laravel/framework": "4.1.*",
+        "lifeentity/dbsynchronize": "dev-master",
+        "lifeentity/api": "dev-master",
+        "lifeentity/membership": "dev-master",
+        "lifeentity/eloquent": "dev-master",
+        "lifeentity/images": "dev-master",
+        "intervention/image": "1.*"
 	},
 	"autoload": {
 		"classmap": [

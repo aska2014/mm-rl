@@ -120,7 +120,13 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 
-	),
+        'Intervention\Image\ImageServiceProvider',
+
+        'Lifeentity\Images\ImagesServiceProvider',
+        'Lifeentity\Membership\MembershipServiceProvider',
+        'Lifeentity\Api\ApiServiceProvider'
+
+    ),
 
 	/*
 	|--------------------------------------------------------------------------

@@ -1,17 +1,26 @@
 <?php
 
-/*
-|--------------------------------------------------------------------------
-| Application Routes
-|--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
-*/
 
 Route::get('/', function()
 {
-	return View::make('hello');
+    $pageSections = array(
+        'navigation',
+        'welcome',
+        'about',
+        'services',
+        'why_to_choose',
+        'information_slides',
+        'blockquote',
+        'shipping_goods',
+        'ready_cloth',
+        'food_members',
+        'main_offers',
+        'roknlodi_video',
+        'google_maps',
+        'contact',
+        'site_social',
+        'footer'
+    );
+
+	return View::make('pages.main', compact('pageSections'));
 });
