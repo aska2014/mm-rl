@@ -7,5 +7,5 @@ composer.lock
 .DS_Store
 Thumbs.db
 Gruntfile.js
-packages.json
+package.json
 /node_modules
