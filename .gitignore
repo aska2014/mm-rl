@@ -4,6 +4,8 @@ composer.phar
 composer.lock
 .env.*.php
 .env.php
+/.tmp
+/.idea
 .DS_Store
 Thumbs.db
 Gruntfile.js

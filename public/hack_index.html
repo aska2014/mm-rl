@@ -1,28 +1,8 @@
-<!DOCTYPE html>
-
-<html lang="en">
-
-
-
-<!-- Mirrored from oxygen.goldeyestheme.com/oxygen/index7.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 30 Apr 2014 06:52:48 GMT -->
-
+<html>
 <head>
 
 
-
-    <meta charset="utf-8" />
-
-    <title> ركن لودى  </title>
-
-    <meta name="description" content="" />
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0" />
-
-    <!--Favicon -->
-
-    <link rel="icon" type="image/png" href="images/favicon.png" />
-
-    @if($isLocalEnvironment())
+    <!-- build:css css/site.min.css -->
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/animate.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -36,30 +16,11 @@
     <link rel="stylesheet" href="css/player/YTPlayer.css" />
     <link rel="stylesheet" href="theme-panel/theme_panel.css" />
     <link id="changeable-colors" rel="stylesheet" href="css/colors/blue.css" />
-    @else
-    <link rel="stylesheet" href="css/site.min.css" />
-    @endif
+    <!-- endbuild -->
+
 </head>
 <body>
-
-
-<!-- Page Loader -->
-
-<section id="pageloader">
-
-    <div class="loader-item fa fa-spin colored-border"></div>
-
-</section>
-
-
-@foreach($pageSections as $section)
-    @include('partials.'.$section)
-@endforeach
-
-
-
-
-@if($isLocalEnvironment())
+<!-- build:js js/site.min.js -->
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/jquery.appear.js"></script>
@@ -77,13 +38,6 @@
 <script type="text/javascript" src="js/jquery.slabtext.js"></script>
 <script type="text/javascript" src="js/plugins.js"></script>
 <script type="text/javascript" src="theme-panel/theme-panel.js"></script>
-@else
-<script type="text/javascript" src="js/site.min.js"></script>
-@endif
-
-
-
+<!-- endbuild -->
 </body>
 </html>
-
-

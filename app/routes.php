@@ -22,5 +22,10 @@ Route::get('/', function()
         'footer'
     );
 
-	return View::make('pages.main', compact('pageSections'));
+    $isLocalEnvironment = function() {
+
+        return App::environment() === 'local';
+    };
+
+	return View::make('pages.main', compact('pageSections', 'isLocalEnvironment'));
 });
