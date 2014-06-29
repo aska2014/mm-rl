@@ -5,8 +5,8 @@ Page Loader
 
 $(window).load(function() {
 	'use strict';
-	$(".loader-item").delay(700).fadeOut();
-	$("#pageloader").delay(1200).fadeOut("slow");
+	$(".loader-item").fadeOut();
+	$("#pageloader").fadeOut("slow");
 });
 
  /* ==============================================
@@ -219,7 +219,7 @@ Pretty Photo
 	
 	jQuery(document).ready(function(){
     jQuery("a[data-rel^='prettyPhoto']").prettyPhoto({
-        theme: "light_square",
+        theme: "light_square"
     });
   });
 

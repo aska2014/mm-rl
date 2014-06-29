@@ -43,6 +43,7 @@ class RunAllCommand extends Command {
         $this->call('migrate', array('--package' => 'lifeentity/membership'));
         $this->call('membership:update');
         $this->call('migrate');
+        $this->call('db:seed');
 	}
 
 	/**

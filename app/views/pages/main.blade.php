@@ -22,7 +22,7 @@
 
     <link rel="icon" type="image/png" href="images/favicon.png" />
 
-    @if($isLocalEnvironment())
+    @if($isLocalEnvironment)
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/animate.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
@@ -51,15 +51,16 @@
 
 </section>
 
+@include('static.navigation')
 
 @foreach($pageSections as $section)
-    @include('partials.'.$section)
+    @include('sections.'.$section->name, compact('section'))
 @endforeach
 
+@include('static.footer')
 
 
-
-@if($isLocalEnvironment())
+@if($isLocalEnvironment)
 <script type="text/javascript" src="js/jquery-1.11.0.min.js"></script>
 <script type="text/javascript" src="js/bootstrap.min.js"></script>
 <script type="text/javascript" src="js/jquery.appear.js"></script>

@@ -2,22 +2,31 @@
 
 class HomeController extends BaseController {
 
-	/*
-	|--------------------------------------------------------------------------
-	| Default Home Controller
-	|--------------------------------------------------------------------------
-	|
-	| You may wish to use controllers instead of, or in addition to, Closure
-	| based routes. That's great! Here is an example controller method to
-	| get you started. To route to this controller, just add the route:
-	|
-	|	Route::get('/', 'HomeController@showWelcome');
-	|
-	*/
+    /**
+     * @param \Website\PageSection $pageSections
+     */
+    public function __construct(\Website\PageSection $pageSections)
+    {
+        $this->pageSections = $pageSections;
+    }
 
-	public function showWelcome()
+    /**
+     * Index page.
+     */
+    public function index()
 	{
-		return View::make('hello');
+        $pageSections = $this->getPageSections();
+
+        $isLocalEnvironment = App::environment() === 'local';
+
+        return View::make('pages.main', compact('pageSections', 'isLocalEnvironment'));
 	}
 
+    /**
+     * @return \Illuminate\Support\Collection of page sections
+     */
+    public function getPageSections()
+    {
+        return $this->pageSections->order()->get();
+    }
 }

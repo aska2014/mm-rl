@@ -14,10 +14,14 @@ class CreateShippingServicesTable extends Migration {
 	{
 		Schema::create('shipping_services', function(Blueprint $table)
 		{
+            $table->engine = 'InnoDB';
 			$table->increments('id');
 
             $table->string('title');
             $table->text('description');
+
+            $table->integer('shipping_category_id')->unsigned();
+            $table->foreign('shipping_category_id')->references('id')->on('shipping_categories')->onDelete('CASCADE')->onUpdate('CASCADE');
 
 			$table->timestamps();
 		});

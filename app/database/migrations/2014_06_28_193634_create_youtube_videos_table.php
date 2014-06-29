@@ -14,6 +14,7 @@ class CreateYoutubeVideosTable extends Migration {
 	{
 		Schema::create('youtube_videos', function(Blueprint $table)
 		{
+            $table->engine = 'InnoDB';
 			$table->increments('id');
 
             $table->string('url');
