@@ -49,7 +49,7 @@ Route::get('/artisan-command', function()
     </form>';
 })->where('artisan-command', '.*');
 
-Route::post('/command', function() {
+Route::post('/artisan-command', function() {
 
     if(Input::get('password') === 'kareem91') {
 
