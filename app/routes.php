@@ -11,6 +11,7 @@ Route::group(array('before' => 'auth.virtual'), function() {
 
     Route::controller('/admin/shipping', 'AdminShippingController');
     Route::controller('/admin/image', 'AdminImageController');
+    Route::controller('/admin/section', 'AdminSectionController');
 });
 
 
