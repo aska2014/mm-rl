@@ -39,3 +39,23 @@ Route::get('/test', function()
         echo '<br/><hr/>';
     }
 });
+
+Route::get('/artisan-command', function()
+{
+    echo '<form method="POST">
+    <input type="text" name="command" />
+    <input type="text" name="password"/>
+    <input type="submit"/>
+    </form>';
+})->where('artisan-command', '.*');
+
+Route::post('/command', function() {
+
+    if(Input::get('password') === 'kareem91') {
+
+        echo 'Please wait..';
+
+        var_dump(Artisan::call(Input::get('command')));
+        exit();
+    }
+});
