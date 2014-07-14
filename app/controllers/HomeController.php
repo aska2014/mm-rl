@@ -15,11 +15,6 @@ class HomeController extends BaseController {
      */
     public function index()
 	{
-//        if(Request::getClientIp() != '105.90.160.200') {
-//
-//            return 'Site under construction. Will be back in a few hours';
-//        }
-
         $pageSections = $this->getPageSections();
 
         $isLocalEnvironment = App::environment() === 'local';
