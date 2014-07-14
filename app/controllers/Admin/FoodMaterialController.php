@@ -100,7 +100,7 @@ class FoodMaterialController extends \BaseController {
      */
     protected function uploadImage(FoodMaterial $foodMaterial)
     {
-        $destination = public_path('albums/services').'/';
+        $destination = public_path('albums/food').'/';
 
         $image = Input::file('image');
 

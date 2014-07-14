@@ -17,7 +17,7 @@ class FoodMaterial extends \Lifeentity\Eloquent\Model {
      */
     public function image()
     {
-        return $this->morphOne('Lifeentity\Images\ImageDB', 'imageables');
+        return $this->morphOne('Lifeentity\Images\ImageDB', 'imageable');
     }
 
 } 
