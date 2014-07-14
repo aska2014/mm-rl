@@ -26,6 +26,13 @@
                     <textarea name="FoodMaterial[description]" rows="5" class="form-control">{{ $foodMaterial->description }}</textarea>
                 </div>
 
+                <div class="form-group">
+                    <label>Image</label>
+                    <input type="file" name="image" />
+                </div>
+
+                @include('admin.partials.image', array('image' => $foodMaterial->image))
+
                 <div class="clearfix"></div>
                 <div class="btn-toolbar list-toolbar">
                     <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
