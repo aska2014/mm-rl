@@ -23,6 +23,7 @@
                     <td>{{ $cloth->description }}</td>
                     <td>
                         <a href="/admin/cloth/edit/{{ $cloth->id }}" class="btn btn-info"><i class="fa fa-pencil"></i></a>
+                        <a href="/admin/cloth/delete/{{ $cloth->id }}" class="btn btn-danger"><i class="fa fa-times"></i></a>
                     </td>
                 </tr>
                 @endforeach

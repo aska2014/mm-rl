@@ -23,6 +23,7 @@
                     <th><i class="fa {{ $businessService->icon }}"></i></th>
                     <td>
                         <a href="/admin/business-service/edit/{{ $businessService->id }}" class="btn btn-info"><i class="fa fa-pencil"></i></a>
+                        <a href="/admin/business-service/delete/{{ $businessService->id }}" class="btn btn-danger"><i class="fa fa-times"></i></a>
                     </td>
                 </tr>
                 @endforeach

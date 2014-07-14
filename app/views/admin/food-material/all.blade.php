@@ -21,6 +21,7 @@
                     <td>{{ $foodMaterial->description }}</td>
                     <td>
                         <a href="/admin/food-material/edit/{{ $foodMaterial->id }}" class="btn btn-info"><i class="fa fa-pencil"></i></a>
+                        <a href="/admin/food-material/delete/{{ $foodMaterial->id }}" class="btn btn-danger"><i class="fa fa-times"></i></a>
                     </td>
                 </tr>
                 @endforeach

@@ -21,6 +21,7 @@
                     <td>{{ $businessInformation->description }}</td>
                     <td>
                         <a href="/admin/business-information/edit/{{ $businessInformation->id }}" class="btn btn-info"><i class="fa fa-pencil"></i></a>
+                        <a href="/admin/business-information/delete/{{ $businessInformation->id }}" class="btn btn-danger"><i class="fa fa-times"></i></a>
                     </td>
                 </tr>
                 @endforeach

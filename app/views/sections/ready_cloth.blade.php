@@ -80,7 +80,7 @@
 
             <div class="work-image">
 
-                <a href="http://www.roknlodi.com/cloth/{{ $cloth->id }}" class="expander">
+                <a href="/cloth/{{ $cloth->id }}" class="expander">
 
                     @if($image = $cloth->mainImage)
                     <img src="{{ $image->addOperation('grab', 370, 270)->cached_url }}" alt="" />

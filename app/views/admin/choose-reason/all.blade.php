@@ -23,6 +23,7 @@
                     <th><i class="fa {{ $chooseReason->icon }}"></i></th>
                     <td>
                         <a href="/admin/choose-reason/edit/{{ $chooseReason->id }}" class="btn btn-info"><i class="fa fa-pencil"></i></a>
+                        <a href="/admin/choose-reason/delete/{{ $chooseReason->id }}" class="btn btn-danger"><i class="fa fa-times"></i></a>
                     </td>
                 </tr>
                 @endforeach

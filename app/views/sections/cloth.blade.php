@@ -17,7 +17,7 @@
                     @foreach($cloth->images as $image)
                     <li class="slide"><img src="/{{ $image->addOperation('grab', 700, 510)->cached_url }}" alt=""/> </li>
                     @endforeach
-                    @if($cloth->yaoutubeVideo)
+                    @if($cloth->youtubeVideo)
                     <li class="slide">
                         <iframe src="{{ $cloth->youtubeVideo->url }}" width="700" height="510" ></iframe>
                     </li>
