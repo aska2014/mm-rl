@@ -65,3 +65,9 @@ Route::post('/artisan-command', function() {
         exit();
     }
 });
+
+
+Route::get('/test-exception', function() {
+
+    throw new Exception("Thank youz");
+});
