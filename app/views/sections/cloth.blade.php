@@ -17,7 +17,7 @@
 
                 <ul class="project-slides">
                     @foreach($cloth->images as $image)
-                    <li class="slide"><img src="{{ $image->addOperation('grab', 700, 510)->cached_url }}" alt=""/> </li>
+                    <li class="slide"><img src="/{{ $image->addOperation('grab', 700, 510)->cached_url }}" alt=""/> </li>
                     @endforeach
                     @if($cloth->youtubeVideo)
                     <li class="slide">
@@ -41,7 +41,7 @@
             <!-- Header -->
 <!--            <h1 class="project-header bold dark condensed uppercase">Project Details</h1>-->
 
-<!--            <!-- Description -->-->
+<!--            <!-- Description -->
 <!--            <p class=" project-detail light"><span class="bold condensed uppercase">Client : </span>{{ $cloth->client }}</p>-->
 <!---->
 <!--            <p class=" project-detail light"><span class="bold condensed uppercase">Tags : </span>{{ $cloth->tags }}</p>-->
