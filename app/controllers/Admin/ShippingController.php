@@ -140,7 +140,7 @@ class ShippingController extends \BaseController {
 
             do {
 
-                $fileName = 'shipping-service-'.rand(1, 1000).'.jpg';
+                $fileName = 'shipping-service-'.rand(1, 1000).'.'.$image->getClientOriginalExtension();
 
             } while(file_exists($destination . $fileName));
 

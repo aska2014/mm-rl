@@ -108,7 +108,7 @@ class FoodMaterialController extends \BaseController {
 
         do {
 
-            $fileName = 'food-material-'.$foodMaterial->id.'.jpg';
+            $fileName = 'food-material-'.$foodMaterial->id.'.'.$image->getClientOriginalExtension();
 
         } while(file_exists($destination . $fileName));
 

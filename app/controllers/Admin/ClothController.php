@@ -167,7 +167,7 @@ class ClothController extends \BaseController {
 
         do {
 
-            $fileName = 'clothes-'.$cloth->id.rand(1, 1000).'.jpg';
+            $fileName = 'clothes-'.$cloth->id.rand(1, 1000).'.'.$image->getClientOriginalExtension();
 
         } while(file_exists($destination . $fileName));
 

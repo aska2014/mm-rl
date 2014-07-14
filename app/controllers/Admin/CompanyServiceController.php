@@ -108,7 +108,7 @@ class CompanyServiceController extends \BaseController {
 
         do {
 
-            $fileName = 'company-service-'.$companyService->id.'.jpg';
+            $fileName = 'company-service-'.$companyService->id.'.'.$image->getClientOriginalExtension();
 
         } while(file_exists($destination . $fileName));
 
