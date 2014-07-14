@@ -26,7 +26,7 @@
 
             <!-- Form -->
 
-            <form id="contact-us" method="post" action="http://oxygen.goldeyestheme.com/">
+            <form id="contact-us" method="post" action="/send">
 
                 <!-- Left Inputs -->
 
@@ -38,7 +38,7 @@
 
                     <!-- Email -->
 
-                    <input type="email" name="mail" id="mail" required class="form light" placeholder="Email" />
+                    <input type="email" name="email" id="mail" required class="form light" placeholder="Email" />
 
                     <!-- Subject -->
 
@@ -52,7 +52,7 @@
 
                     <!-- Message -->
 
-                    <textarea name="message" id="message" class="form textarea light"  placeholder="Message"></textarea>
+                    <textarea name="body" id="message" class="form textarea light"  placeholder="Message"></textarea>
 
                 </div><!-- End Right Inputs -->
 

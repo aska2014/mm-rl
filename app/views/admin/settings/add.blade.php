@@ -76,6 +76,15 @@
                     <input type="text" name="FooterVideo[url]" value="{{ $footerVideo->url }}" class="form-control" required>
                 </div>
 
+                <hr/>
+
+                <h2>Emails to notify users contact us</h2><br/>
+
+                <div class="form-group">
+                    <label>Emails <small>Seperate with comma ,</small></label>
+                    <input type="text" name="emails" value="{{ $concatedEmails }}" class="form-control" required>
+                </div>
+
 
                 <div class="clearfix"></div>
                 <div class="btn-toolbar list-toolbar">

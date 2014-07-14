@@ -6,6 +6,7 @@ Route::get('/section/{name}', array('uses' => 'HomeController@section'));
 
 Route::get('/cloth/{id}', array('uses' => 'ClothController@show'));
 
+Route::post('/send', array('uses' => 'ContactUsController@send'));
 
 // Available resources
 Route::get('/api/markers', array('uses' => 'GoogleMarkerResource@index'));
