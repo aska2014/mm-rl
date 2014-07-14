@@ -26,7 +26,6 @@
     <link rel="stylesheet" href="css/reset.css" />
     <link rel="stylesheet" href="css/animate.min.css" />
     <link rel="stylesheet" href="css/bootstrap.min.css" />
-    <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/flexslider.css" />
     <link rel="stylesheet" href="css/font-awesome.css" />
     <link rel="stylesheet" href="css/owl.carousel.css" />
@@ -39,6 +38,8 @@
     @else
     <link rel="stylesheet" href="css/site.min.css" />
     @endif
+
+    <link rel="stylesheet" href="css/style.css" />
 </head>
 <body>
 
