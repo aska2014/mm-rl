@@ -1,7 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
-<!-- Mirrored from oxygen.goldeyestheme.com/oxygen/projects/project-5.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 30 Apr 2014 06:53:15 GMT -->
 <head>
 </head>
 <body>
@@ -56,6 +54,4 @@
 </section><!-- End Project -->
 
 </body>
-
-<!-- Mirrored from oxygen.goldeyestheme.com/oxygen/projects/project-5.html by HTTrack Website Copier/3.x [XR&CO'2013], Wed, 30 Apr 2014 06:53:15 GMT -->
 </html>
