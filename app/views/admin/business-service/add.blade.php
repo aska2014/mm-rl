@@ -15,7 +15,7 @@
                     <label>
                         <i class="fa {{ $businessService->icon }}"></i>
                         Icon name: <small>For list of icons <a href="http://fortawesome.github.io/Font-Awesome/icons/" target="_blank">click here</a></small></label>
-                    <input type="text" name="ChooseReason[icon]" value="{{ $businessService->icon }}" class="form-control" required>
+                    <input type="text" name="BusinessService[icon]" value="{{ $businessService->icon }}" class="form-control" required>
                 </div>
 
                 <div class="form-group">

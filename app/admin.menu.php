@@ -68,14 +68,14 @@ View::composer('admin.template', function($view)
     );
     $headerItems[] = array(
         'title' => 'Map',
-        'icon'  => 'gear',
+        'icon'  => 'fa-map-marker',
         'items' => array(
             'Edit locations' => 'map'
         )
     );
     $headerItems[] = array(
         'title' => 'Clothes',
-        'icon'  => 'tree',
+        'icon'  => 'fa-tags',
         'items' => array(
             'Create new'  => 'cloth/create',
             'Display all' => 'cloth'
