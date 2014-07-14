@@ -39,12 +39,12 @@
             <p class=" project-desc light">{{ $cloth->description }}</p>
 
             <!-- Header -->
-            <h1 class="project-header bold dark condensed uppercase">Project Details</h1>
+<!--            <h1 class="project-header bold dark condensed uppercase">Project Details</h1>-->
 
-            <!-- Description -->
-            <p class=" project-detail light"><span class="bold condensed uppercase">Client : </span>{{ $cloth->client }}</p>
-
-            <p class=" project-detail light"><span class="bold condensed uppercase">Tags : </span>{{ $cloth->tags }}</p>
+<!--            <!-- Description -->-->
+<!--            <p class=" project-detail light"><span class="bold condensed uppercase">Client : </span>{{ $cloth->client }}</p>-->
+<!---->
+<!--            <p class=" project-detail light"><span class="bold condensed uppercase">Tags : </span>{{ $cloth->tags }}</p>-->
 
 <!--            <p class=" project-detail light"><span class="bold condensed uppercase">Date : </span>25 JAN 2014</p>-->
 

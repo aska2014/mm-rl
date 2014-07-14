@@ -42,7 +42,7 @@
 
                 <div class="form-group">
                     <label>Main image</label>
-                    <input type="file" name="image" multiple />
+                    <input type="file" name="image" />
                 </div>
 
                 @include('admin.partials.image', array('image' => $cloth->mainImage))

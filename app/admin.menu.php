@@ -59,6 +59,14 @@ View::composer('admin.template', function($view)
         )
     );
     $headerItems[] = array(
+        'title' => 'Clothes',
+        'icon'  => 'tags',
+        'items' => array(
+            'Create new'  => 'cloth/create',
+            'Display all' => 'cloth'
+        )
+    );
+    $headerItems[] = array(
         'title' => 'Food materials',
         'icon'  => 'tree',
         'items' => array(
@@ -71,14 +79,6 @@ View::composer('admin.template', function($view)
         'icon'  => 'map-marker',
         'items' => array(
             'Edit locations' => 'map'
-        )
-    );
-    $headerItems[] = array(
-        'title' => 'Clothes',
-        'icon'  => 'tags',
-        'items' => array(
-            'Create new'  => 'cloth/create',
-            'Display all' => 'cloth'
         )
     );
     $headerItems[] = array(
