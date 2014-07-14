@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
 </head>
-<body dir="rtl">
+<body dir="ltr">
 <div>
 
     <h2>New message received in roknlodi websie</h2>

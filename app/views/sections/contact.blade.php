@@ -62,7 +62,7 @@
 
                     <!-- Send Button -->
 
-                    <button type="submit" id="submit" name="submit" class="form-btn light">ارســـل</button>
+                    <button type="submit" onclick="this.disabled = true" id="submit" name="submit" class="form-btn light">ارســـل</button>
 
                 </div><!-- End Bottom Submit -->
 
