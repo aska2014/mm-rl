@@ -28,11 +28,11 @@ class ContactUsController extends BaseController {
 
     /**
      * @param $email
-     * @param Message $message
+     * @param Website\Message $websiteMessage
      */
-    protected function sendEmail($email, Message $message)
+    protected function sendEmail($email, Message $websiteMessage)
     {
-        Mail::send('emails.contact', compact('message'), function($mail) use($email)
+        Mail::send('emails.contact', compact('websiteMessage'), function($mail) use($email)
         {
             $mail->to($email, 'Roknlodi administrator')->subject('Message from Roknlodi');
         });

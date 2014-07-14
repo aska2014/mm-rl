@@ -8,16 +8,16 @@
 
     <h2>New message received in roknlodi websie</h2>
 
-    <strong>Name: </strong> {{ $message->name }}<br/>
-    <strong>Email: </strong> {{ $message->email }}<br/>
-    <strong>Subject: </strong> {{ $message->subject }}<br/>
-    <strong>Message: </strong> {{ $message->body }}<br/>
+    <strong>Name: </strong> {{ $websiteMessage->name }}<br/>
+    <strong>Email: </strong> {{ $websiteMessage->email }}<br/>
+    <strong>Subject: </strong> {{ $websiteMessage->subject }}<br/>
+    <strong>Message: </strong> {{ $websiteMessage->body }}<br/>
 
     <hr />
 
     <br/>
 
-    <strong>Date: </strong><small>{{ $message->created_at }}</small>
+    <strong>Date: </strong><small>{{ $websiteMessage->created_at }}</small>
 </div>
 </body>
 </html>
