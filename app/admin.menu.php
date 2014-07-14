@@ -46,8 +46,8 @@ View::composer('admin.template', function($view)
         'title' => 'Information Slides',
         'icon'  => 'sliders',
         'items' => array(
-            'Create new'  => 'information/create',
-            'Display all' => 'information'
+            'Create new'  => 'business-information/create',
+            'Display all' => 'business-information'
         )
     );
     $headerItems[] = array(
