@@ -6,5 +6,5 @@ App::error(function(Exception $e, $code)
 
     $notifier->notify($e, $code);
 
-    return 'Something went wrong while trying to process your request :(';
+    echo 'Something went wrong while trying to process your request :(';
 });
