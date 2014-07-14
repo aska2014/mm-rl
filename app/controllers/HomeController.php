@@ -22,7 +22,7 @@ class HomeController extends BaseController {
 
         $pageSections = $this->getPageSections();
 
-        $isLocalEnvironment = App::environment() === 'local';
+        $isLocalEnvironment = App::environment() === 'locala';
 
         return View::make('pages.main', compact('pageSections', 'isLocalEnvironment'));
 	}
