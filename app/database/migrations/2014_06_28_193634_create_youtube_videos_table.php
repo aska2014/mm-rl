@@ -17,6 +17,8 @@ class CreateYoutubeVideosTable extends Migration {
             $table->engine = 'InnoDB';
 			$table->increments('id');
 
+            $table->string('position');
+
             $table->string('url');
             $table->string('title');
             $table->text('description');

@@ -48,13 +48,13 @@
 
         <li><a href="#filter" data-option-value="*" class="selected">show all</a></li>
 
-        <li><a href="#filter" data-option-value=".design">تى شيرت</a></li>
+        <?php $i = 0; ?>
+        @foreach($groups as $group => $clothes)
 
-        <li><a href="#filter" data-option-value=".photography">جاكيت</a></li>
+        <li><a href="#filter" data-option-value=".group{{ $i }}">{{ $group }}</a></li>
 
-        <li><a href="#filter" data-option-value=".video">فستان</a></li>
-
-        <li><a href="#filter" data-option-value=".art">قميص رجالي</a></li>
+        <?php $i ++; ?>
+        @endforeach
 
     </ul>
 
@@ -68,383 +68,48 @@
 
 
 
+<?php $i = 0; ?>
 <!-- Work -->
+@foreach($groups as $group => $clothes)
+    @foreach($clothes as $cloth)
+    <div class="work five group{{ $i }} ">
 
-<div class="work five design ">
+        <div class="work-inner">
 
-    <div class="work-inner">
+            <!-- Image -->
 
-        <!-- Image -->
+            <div class="work-image">
 
-        <div class="work-image">
+                <a href="/cloth/{{ $cloth->id }}" class="expander">
 
-            <a href="projects/project-1.html" class="expander">
+                    @if($image = $cloth->mainImage)
+                    <img src="{{ $image->addOperation('grab', 370, 270)->cached_url }}" alt="" />
+                    @endif
 
-                <img src="images/portfolio/1.jpg" alt="" />
+                    <span class="positive"></span>
 
-                <span class="positive"></span>
+                </a>
 
-            </a>
+            </div>
 
-        </div>
+            <!-- Work Details -->
 
-        <!-- Work Details -->
+            <div class="work-bottom">
 
-        <div class="work-bottom">
+                <p class="work-name uppercase normal no-margin">{{ $cloth->title }}</p>
 
-            <p class="work-name uppercase normal no-margin"> تى شيرت  </p>
+<!--                <p class="work-category normal no-margin">{{ $cloth->title }}</p>-->
 
-            <p class="work-category normal no-margin"> تى شيرت</p>
+<!--                <a href="images/portfolio/slide2.jpg"  data-rel="prettyPhoto[gallery]" class="work-link" ><span class="arrow"></span></a>-->
 
-            <a href="images/portfolio/slide2.jpg"  data-rel="prettyPhoto[gallery]" class="work-link" ><span class="arrow"></span></a>
+            </div>
 
-        </div>
+        </div><!-- End Work Inner -->
 
-    </div><!-- End Work Inner -->
-
-</div><!-- End Work -->
-
-
-
-<!-- Work -->
-
-<div class="work five video photography">
-
-    <div class="work-inner">
-
-        <!-- Image -->
-
-        <div class="work-image">
-
-            <a href="projects/project-2.html" class="expander">
-
-                <img src="images/portfolio/2.jpg" alt="" />
-
-                <span class="positive"></span>
-
-            </a>
-
-        </div>
-
-        <!-- Work Details -->
-
-        <div class="work-bottom">
-
-            <p class="work-name uppercase normal no-margin">  تى شيرت  </p>
-
-            <p class="work-category normal no-margin"> تى شيرت  </p>
-
-            <a class="work-link-passive" ><span class="arrow"></span></a>
-
-        </div>
-
-    </div><!-- End Work Inner -->
-
-</div><!-- End Work -->
-
-
-
-<!-- Work -->
-
-<div class="work five art video">
-
-    <div class="work-inner">
-
-        <!-- Image -->
-
-        <div class="work-image">
-
-            <a href="projects/project-3.html" class="expander">
-
-                <img src="images/portfolio/3.jpg" alt="" />
-
-                <span class="positive"></span>
-
-            </a>
-
-        </div>
-
-        <!-- Work Details -->
-
-        <div class="work-bottom">
-
-            <p class="work-name uppercase normal no-margin">  تى شيرت </p>
-
-            <p class="work-category normal no-margin"> تى شيرت</p>
-
-            <a  href="images/portfolio/slide1.jpg"  data-rel="prettyPhoto[gallery]" class="work-link"  ><span class="arrow"></span></a>
-
-        </div>
-
-    </div><!-- End Work Inner -->
-
-</div><!-- End Work -->
-
-
-
-<!-- Work -->
-
-<div class="work five design art">
-
-    <div class="work-inner">
-
-        <!-- Image -->
-
-        <div class="work-image">
-
-            <a href="projects/project-4.html" class="expander">
-
-                <img src="images/portfolio/4.jpg" alt="" />
-
-                <span class="positive"></span>
-
-            </a>
-
-        </div>
-
-        <!-- Work Details -->
-
-        <div class="work-bottom">
-
-            <p class="work-name uppercase normal no-margin"> تى شيرت </p>
-
-            <p class="work-category normal no-margin"> تى شيرت </p>
-
-            <a class="work-link-passive" ><span class="arrow"></span></a>
-
-        </div>
-
-    </div><!-- End Work Inner -->
-
-</div><!-- End Work -->
-
-
-
-<!-- Work -->
-
-<div class="work five design video">
-
-    <div class="work-inner">
-
-        <!-- Image -->
-
-        <div class="work-image">
-
-            <a href="projects/project-5.html" class="expander">
-
-                <img src="images/portfolio/5.jpg" alt="" />
-
-                <span class="positive"></span>
-
-            </a>
-
-        </div>
-
-        <!-- Work Details -->
-
-        <div class="work-bottom">
-
-            <p class="work-name uppercase normal no-margin"> تى شيرت </p>
-
-            <p class="work-category normal no-margin">تى شيرت</p>
-
-            <a href="images/portfolio/slide3.jpg"  data-rel="prettyPhoto[gallery]"  class="work-link" ><span class="arrow"></span></a>
-
-        </div>
-
-    </div><!-- End Work Inner -->
-
-</div><!-- End Work -->
-
-
-
-<!-- Work -->
-
-<div class="work five art photography">
-
-    <div class="work-inner">
-
-        <!-- Image -->
-
-        <div class="work-image">
-
-            <a href="projects/project-1.html" class="expander">
-
-                <img src="images/portfolio/6.jpg" alt="" />
-
-                <span class="positive"></span>
-
-            </a>
-
-        </div>
-
-        <!-- Work Details -->
-
-        <div class="work-bottom">
-
-            <p class="work-name uppercase normal no-margin">  تى شيرت </p>
-
-            <p class="work-category normal no-margin">تي شيرت</p>
-
-            <a href="images/portfolio/slide4.jpg"  data-rel="prettyPhoto[gallery]"  class="work-link" ><span class="arrow"></span></a>
-
-        </div>
-
-    </div><!-- End Work Inner -->
-
-</div><!-- End Work -->
-
-
-
-<!-- Work -->
-
-<div class="work five design photography video">
-
-    <div class="work-inner">
-
-        <!-- Image -->
-
-        <div class="work-image">
-
-            <a href="projects/project-2.html" class="expander">
-
-                <img src="images/portfolio/7.jpg" alt="" />
-
-                <span class="positive"></span>
-
-            </a>
-
-        </div>
-
-        <!-- Work Details -->
-
-        <div class="work-bottom">
-
-            <p class="work-name uppercase normal no-margin"> تى شيرت</p>
-
-            <p class="work-category normal no-margin">تى شيرت</p>
-
-            <a class="work-link-passive" ><span class="arrow"></span></a>
-
-        </div>
-
-    </div><!-- End Work Inner -->
-
-</div><!-- End Work -->
-
-
-
-<!-- Work -->
-
-<div class="work five video photography art">
-
-    <div class="work-inner">
-
-        <!-- Image -->
-
-        <div class="work-image">
-
-            <a href="projects/project-3.html" class="expander">
-
-                <img src="images/portfolio/8.jpg" alt="" />
-
-                <span class="positive"></span>
-
-            </a>
-
-        </div>
-
-        <!-- Work Details -->
-
-        <div class="work-bottom">
-
-            <p class="work-name uppercase normal no-margin"> تى شيرت </p>
-
-            <p class="work-category normal no-margin">تى شيرت</p>
-
-            <a href="images/portfolio/slide5.jpg"  data-rel="prettyPhoto[gallery]"  class="work-link" ><span class="arrow"></span></a>
-
-        </div>
-
-    </div><!-- End Work Inner -->
-
-</div><!-- End Work -->
-
-
-
-<!-- Work -->
-
-<div class="work five art">
-
-    <div class="work-inner">
-
-        <!-- Image -->
-
-        <div class="work-image">
-
-            <a href="projects/project-4.html" class="expander">
-
-                <img src="images/portfolio/9.jpg" alt="" />
-
-                <span class="positive"></span>
-
-            </a>
-
-        </div>
-
-        <!-- Work Details -->
-
-        <div class="work-bottom">
-
-            <p class="work-name uppercase normal no-margin">تى شيرت</p>
-
-            <p class="work-category normal no-margin">تي شيرت</p>
-
-            <a class="work-link-passive" ><span class="arrow"></span></a>
-
-        </div>
-
-    </div><!-- End Work Inner -->
-
-</div><!-- End Work -->
-
-
-
-<!-- Work -->
-
-<div class="work five photography design">
-
-    <div class="work-inner">
-
-        <!-- Image -->
-
-        <div class="work-image">
-
-            <a href="projects/project-5.html" class="expander">
-
-                <img src="images/portfolio/10.jpg" alt="" />
-
-                <span class="positive"></span>
-
-            </a>
-
-        </div>
-
-        <!-- Work Details -->
-
-        <div class="work-bottom">
-
-            <p class="work-name uppercase normal no-margin">تى شيرت </p>
-
-            <p class="work-category normal no-margin">تى شيرت</p>
-
-            <a class="work-link-passive" ><span class="arrow"></span></a>
-
-        </div>
-
-    </div><!-- End Work Inner -->
-
-</div><!-- End Work -->
+    </div><!-- End Work -->
+    @endforeach
+    <?php $i ++; ?>
+@endforeach
 
 
 

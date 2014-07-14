@@ -46,7 +46,7 @@
         <div class="timeline-images">
 
             @foreach($service->images as $image)
-            <a href="{{ $image->original_url }}"  data-rel="prettyPhoto[gallery{{ $i }}]" class="timeline-image"><img src="{{ $image->addOperation('resize', 70, 70)->cached_url }}" alt="" /></a>
+            <a href="{{ $image->original_url }}"  data-rel="prettyPhoto[gallery{{ $i }}]" class="timeline-image"><img src="{{ $image->addOperation('grab', 70, 70)->cached_url }}" alt="" /></a>
             @endforeach
 
             @foreach($service->youtubeVideos as $video)

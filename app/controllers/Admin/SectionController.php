@@ -1,8 +1,11 @@
-<?php
-class AdminSectionController extends BaseController {
+<?php namespace Admin;
+
+use Redirect, View, Input, EmptyClass;
+
+class SectionController extends \BaseController {
 
     /**
-     * @param Website\PageSection $sections
+     * @param \Website\PageSection $sections
      */
     public function __construct(\Website\PageSection $sections)
     {

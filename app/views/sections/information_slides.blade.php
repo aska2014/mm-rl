@@ -7,9 +7,9 @@
     <div class="inner">
 
 
-
         <ul class="t-slides">
 
+            @foreach($businessInformation as $information)
 
             <!-- Testimonial -->
 
@@ -17,29 +17,15 @@
 
                 <!-- Text -->
 
-                <h1 class="uppercase bold condensed white">  معلومات عن اهم الخدمات التى يقدمها  قسم  خدمات رجال الاعمال 1 </h1>
+                <h1 class="uppercase bold condensed white">{{ $information->title }}</h1>
 
                 <!-- Name -->
 
-                <p class="light uppercase">معلومات هامة 1 </p>
+                <p class="light uppercase">{{ $information->description }}</p>
 
             </li>
 
-
-
-            <!-- Testimonial -->
-
-            <li class="monial">
-
-                <!-- Text -->
-
-                <h1 class="uppercase bold condensed white"> معلومات عن اهم الخدمات التى يقدمها  قسم  خدمات رجال الاعمال 2</h1>
-
-                <!-- Name -->
-
-                <p class="light uppercase"> معلومات هامة 2  </p>
-
-            </li>
+            @endforeach
 
 
 

@@ -57,19 +57,21 @@
 
         </div>
 
+        @if($contact)
+
         <!-- Adress, Mail -->
 
         <div class="address">
 
             <!-- Phone Number, Mail -->
 
-            <p><a href="mailto:support@goldeyestheme.com" class="bold dark">info@roknlodi.com</a> : للتواصل عبر بريد الشركة</p>
+            <p><a href="mailto:{{ $contact->email }}" class="bold dark">{{ $contact->email }}</a> : للتواصل عبر بريد الشركة</p>
 
-            <p><span class="bold colored">0114465137</span>  الهاتف  <span class="bold colored">0537995664</span>  جوال  </p>
+            <p><span class="bold colored">{{ $contact->mobile }}</span>  الهاتف  <span class="bold colored">{{ $contact->telephone }}</span>  جوال  </p>
 
             <!-- Adress -->
 
-            <p>  المركز الرئيسيى<span class="bold colored"> الرياض </span>شارع المنفوحة العام مقابل مطعم أفندينا</p>
+            <p>  المركز الرئيسيى<span class="bold colored"> {{ $contact->city }}</span>{{ $contact->address }}</p>
 
             <!-- Top Button -->
 
@@ -80,6 +82,8 @@
             </a>
 
         </div><!-- End Adress, Mail -->
+
+        @endif
 
     </div><!-- End Inner -->
 

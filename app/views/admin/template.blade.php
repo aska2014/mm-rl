@@ -104,45 +104,24 @@
 
 <div class="sidebar-nav">
     <ul>
-        @if(Request::is('admin/shipping*'))
-        <li><a href="#" data-target=".shipping-menu" class="nav-header" data-toggle="collapse"><i
-                    class="fa fa-fw fa-dashboard"></i> Shipping<i class="fa fa-collapse"></i></a></li>
-        <li>
-            <ul class="shipping-menu nav nav-list collapse in">
-                <li><a href="/admin/shipping/create"><span class="fa fa-caret-right"></span> Create new</a></li>
-                <li><a href="/admin/shipping/"><span class="fa fa-caret-right"></span> Display all</a></li>
-            </ul>
-        </li>
-        @else
-        <li><a href="#" data-target=".shipping-menu" class="nav-header collapsed" data-toggle="collapse"><i
-                    class="fa fa-fw fa-dashboard"></i> Shipping<i class="fa fa-collapse"></i></a></li>
-        <li>
-            <ul class="shipping-menu nav nav-list collapse">
-                <li><a href="/admin/shipping/create"><span class="fa fa-caret-right"></span> Create new</a></li>
-                <li><a href="/admin/shipping/"><span class="fa fa-caret-right"></span> Display all</a></li>
-            </ul>
-        </li>
-        @endif
-
-        @if(Request::is('admin/section*'))
-        <li><a href="#" data-target=".section-menu" class="nav-header" data-toggle="collapse"><i
-                    class="fa fa-fw fa-dashboard"></i> Section<i class="fa fa-collapse"></i></a></li>
+        @foreach($headerItems as $item)
 
         <li>
-            <ul class="section-menu nav nav-list collapse in">
-                <li><a href="/admin/section/"><span class="fa fa-caret-right"></span> Display all</a></li>
-            </ul>
+            <a href="javascript:void(0)" data-target=".unique-{{ $item->unique() }}-menu"
+                        class="nav-header {{ $item->isActive() ? '':'collapsed' }}"
+                        data-toggle="collapse">
+            <i class="fa fa-fw fa-{{ $item->icon }}"></i> {{ $item->title }}<i class="fa fa-collapse"></i></a>
         </li>
-        @else
-        <li><a href="#" data-target=".section-menu" class="nav-header collapsed" data-toggle="collapse"><i
-                    class="fa fa-fw fa-dashboard"></i> Section<i class="fa fa-collapse"></i></a></li>
-
         <li>
-            <ul class="section-menu nav nav-list collapse">
-                <li><a href="/admin/section/"><span class="fa fa-caret-right"></span> Display all</a></li>
+            <ul class="unique-{{ $item->unique() }}-menu nav nav-list collapse {{ $item->isActive() ? 'in':'' }}">
+                @foreach($item->children() as $child)
+                <li class="{{ $child->isActive() ? 'active':'' }}">
+                    <a href="{{ $child->url }}"><span class="fa fa-caret-right"></span> {{$child->title}}</a>
+                </li>
+                @endforeach
             </ul>
         </li>
-        @endif
+        @endforeach
     </ul>
 </div>
 

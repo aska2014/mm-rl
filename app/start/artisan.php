@@ -17,3 +17,4 @@ Artisan::add(new DropAllCommand());
 Artisan::add(new \Lifeentity\Membership\Commands\SetupCommand());
 Artisan::add(new \Lifeentity\Api\Command\MakeResourceCommand());
 Artisan::add(new RunAllCommand());
+Artisan::add(new CreateAdminResourceCommand());

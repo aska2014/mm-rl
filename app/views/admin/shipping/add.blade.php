@@ -62,16 +62,8 @@
                     <input type="file" name="images[]" multiple />
                 </div>
 
-                @if($service->id)
-                <div class="col-md-12">
-                    @foreach($service->images as $image)
-                    <div style="float:left; margin:5px;">
-                        <a href="{{ $image->original_url }}"><img src="{{ $image->original_url }}" style="width:60px; height:60px;"/></a><br/>
-                        <a style="color:#F00; font-size:11px;" href="/admin/image/delete/{{ $image->id }}">Delete image</a>
-                    </div>
-                    @endforeach
-                </div>
-                @endif
+
+                @include('admin.partials.images', array('images' => $service->images))
 
                 <div class="clearfix"></div>
                 <div class="btn-toolbar list-toolbar" style="margin-top:20px;">

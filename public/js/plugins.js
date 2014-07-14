@@ -567,121 +567,80 @@ Google Map
 =============================================== */
 
 $(document).ready(function() {
-			'use strict';
 
-			//Google Map Open&Close Effect
-			$( ".google-map-big-button" ).click(function(){
-				$( "#map-button" ).toggleClass( "close-map-button", "open-map-button", 1000 );
-				$( "#map-button" ).toggleClass( "open-map-button", "close-map-button", 1000 );
-				$( "#map" ).toggleClass( "close-map", "open-map", 1000 );
-				$( "#map" ).toggleClass( "open-map", "close-map", 1000 );
-				return false;
-			});
+    $.ajax({
+        url: '/api/markers',
+        method: 'GET',
+        success: function(markers)
+        {
+            if(markers.length == 0) {
+                initializeMap(new google.maps.LatLng(24.266906,45.107849));
+            }
 
-			// Map Coordination
+            for(var i = 0; i < markers.length; i++) {
 
-			var latlng = new google.maps.LatLng(41.862274,-87.661328);
+                var position = new google.maps.LatLng(markers[i].latitude,markers[i].longitude);
 
-			// Map Options
-			var myOptions = {
-				zoom: 15,
-				center: latlng,
-				mapTypeId: google.maps.MapTypeId.ROADMAP,
-				disableDefaultUI: true,
-				scrollwheel: false,
-			};
+                if(i == 0) initializeMap(position);
 
-			var map = new google.maps.Map(document.getElementById('google-map'), myOptions);
+                addMarker(position, markers[i].title, markers[i].description);
+            }
+        }
+    });
 
-			// Marker Image
-			var image = 'images/marker.png';
-			
-		  	/* ========= First Marker ========= */
+    var map;
 
-		  	// First Marker Coordination
-			
-			var myLatlng = new google.maps.LatLng(41.856774,-87.679928);
+    var initializeMap = function(center)
+    {
+        // Map Options
+        var myOptions = {
+            zoom: 15,
+            center: center,
+            mapTypeId: google.maps.MapTypeId.ROADMAP,
+            disableDefaultUI: true,
+            scrollwheel: false
+        };
 
-			// Your Texts 
-
-			 var contentString = '<div id="content">'+
-			  '<div id="siteNotice">'+
-			  '</div>'+
-			  '<h4>' +
-
-			  'Office 1'+
-
-			  '</h4>'+
-			  '<p>' +
-
-			  'Your description is here.' +
-
-			  '</p>'+
-			  '</div>';
-			
-
-			var marker = new google.maps.Marker({
-				  position: myLatlng,
-				  map: map,
-				  title: 'Hello World!',
-				  icon: image
-			  });
+        map = new google.maps.Map(document.getElementById('google-map'), myOptions);
+    }
 
 
-			var infowindow = new google.maps.InfoWindow({
-			  content: contentString
-			  });
+    var addMarker = function(location, title, description)
+    {
+        var image = 'images/marker.png';
 
-			  
-			 google.maps.event.addListener(marker, 'click', function() {
-				infowindow.open(map,marker);
-			  });
+        var contentString =
+            '<div id="content">'+
+            '<div id="siteNotice"></div>'+
+            '<h4>' + title + '</h4>'+
+            '<p>' + description + '</p>'+
+            '</div>';
 
-			 /* ========= End First Marker ========= */
+        var marker = new google.maps.Marker({
+            position: location,
+            map: map,
+            title: title,
+            icon: image
+        });
 
+        var infowindow = new google.maps.InfoWindow({
+            content: contentString
+        });
 
+        google.maps.event.addListener(marker, 'click', function() {
+            infowindow.open(map,marker);
+        });
+    }
 
-
-			 /* ========= Second Marker ========= */
-
-			 // Second Marker Coordination
-
-			 var myLatlngSecond = new google.maps.LatLng(41.863774,-87.639928);
-
-			 // Your Texts
-
-			 var contentStringSecond = '<div id="content">'+
-			  '<div id="siteNotice">'+
-			  '</div>'+
-			  '<h4>' +
-
-			  'Office 2'+
-
-			  '</h4>'+
-			  '<p>' +
-
-			  'Your description is here.' +
-
-			  '</p>'+
-			  '</div>';
-
-			  var infowindowSecond = new google.maps.InfoWindow({
-				  content: contentStringSecond,
-				  });
-
-			 var markerSecond = new google.maps.Marker({
-				  position: myLatlngSecond,
-				  map: map,
-				  title: 'Hello World!',
-				  icon: image
-			  });
-
-			 google.maps.event.addListener(markerSecond, 'click', function() {
-				infowindowSecond.open(map,markerSecond);
-			  });
-
-			 /* ========= End Second Marker ========= */
+    //Google Map Open&Close Effect
+    $( ".google-map-big-button" ).click(function(){
+        $( "#map-button" ).toggleClass( "close-map-button", "open-map-button", 1000 );
+        $( "#map-button" ).toggleClass( "open-map-button", "close-map-button", 1000 );
+        $( "#map" ).toggleClass( "close-map", "open-map", 1000 );
+        $( "#map" ).toggleClass( "open-map", "close-map", 1000 );
+        return false;
+    });
 		
-		})
+})
 
 

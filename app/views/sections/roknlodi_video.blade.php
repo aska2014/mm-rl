@@ -28,7 +28,9 @@
 
     <!-- Video -->
 
-    <div id="P2" class="player video-container" data-property="{videoURL:'abIf3yCHdK4',containment:'#video',autoPlay:true, showControls:false, mute:true, startAt:0, opacity:1}"></div>
+    @if($footerVideo)
+    <div id="P2" class="player video-container" data-property="{videoURL:'{{ $footerVideo->code }}',containment:'#video',autoPlay:true, showControls:false, mute:true, startAt:0, opacity:1}"></div>
+    @endif
 
     <!-- End Video -->
 

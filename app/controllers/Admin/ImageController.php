@@ -1,6 +1,8 @@
-<?php
+<?php namespace Admin;
 
-class AdminImageController extends BaseController {
+use Redirect, View, Input, EmptyClass;
+
+class ImageController extends \BaseController {
 
     /**
      * @param \Lifeentity\Images\ImageDB $images

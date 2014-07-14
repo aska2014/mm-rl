@@ -22,81 +22,32 @@
 
         <div class="features-boxes">
 
-
+            <?php $i = 0;?>
+            @foreach($chooseReasons as $reason)
 
             <!-- Box 1 -->
 
-            <div class="col-xs-4 f-box animated" data-animation="fadeIn" data-animation-delay="0">
+            <div class="col-xs-4 f-box animated" data-animation="fadeIn" data-animation-delay="{{ $i * 100 }}">
 
                 <!-- Icon -->
 
                 <a class="f-icon">
 
-                    <i class="fa fa-tablet"></i>
+                    <i class="{{ $reason->icon }}"></i>
 
                 </a>
 
                 <!-- Header -->
 
-                <p class="feature-head uppercase">خدمة رجال الاعمال</p>
+                <p class="feature-head uppercase">{{ $reason->title }}</p>
 
                 <!-- Text -->
 
-                <p class="feature-text light">تعريف لنوع الجدمة المقمة خدمة رجال الاعمالتعريف لنوع الجدمة المقمة خدمة رجال الاعمالتعريف لنوع الجدمة المقمة خدمة رجال الاعمال</p>
+                <p class="feature-text light">{{ $reason->description }}</p>
 
             </div>
-
-
-
-
-
-            <!-- Box 2 -->
-
-            <div class="col-xs-4 f-box animated" data-animation="fadeIn" data-animation-delay="100">
-
-                <!-- Icon -->
-
-                <a class="f-icon">
-
-                    <i class="fa fa-html5"></i>
-
-                </a>
-
-                <!-- Header -->
-
-                <p class="feature-head uppercase">خدمة رجال الاعمال</p>
-
-                <!-- Text -->
-
-                <p class="feature-text light">تعريف لنوع الجدمة المقمة خدمة رجال الاعمالتعريف لنوع الجدمة المقمة خدمة رجال الاعمالتعريف لنوع الجدمة المقمة خدمة رجال الاعمال</p>
-
-            </div>
-
-
-
-
-
-            <!-- Box 3 -->
-
-            <div class="col-xs-4 f-box animated" data-animation="fadeIn" data-animation-delay="200">
-
-                <!-- Icon -->
-
-                <a class="f-icon">
-
-                    <i class="fa fa-cogs"></i>
-
-                </a>
-
-                <!-- Header -->
-
-                <p class="feature-head uppercase">خدمة رجال الاعمال</p>
-
-                <!-- Text -->
-
-                <p class="feature-text light">تعريف لنوع الجدمة المقمة خدمة رجال الاعمال تعريف لنوع الجدمة المقمة خدمة رجال الاعمالتعريف لنوع الجدمة المقمة خدمة رجال الاعمال</p>
-
-            </div>
+            <?php $i++;?>
+            @endforeach
 
 
 

@@ -1,0 +1,32 @@
+@extends('admin.template')
+
+@section('content')
+<div class="header">
+
+    <h1 class="page-title">Edit {title}</h1>
+
+</div>
+<div class="main-content">
+    <div class="row">
+        <div class="col-md-12">
+            <form method="POST" enctype="multipart/form-data">
+
+                <div class="form-group">
+                    <label>Title</label>
+                    <input type="text" name="{input}[title]" value="{{ ${variable}->title }}" class="form-control" required>
+                </div>
+
+                <div class="form-group">
+                    <label>Description</label>
+                    <textarea name="{input}[description]" rows="5" class="form-control">{{ ${variable}->description }}</textarea>
+                </div>
+
+                <div class="clearfix"></div>
+                <div class="btn-toolbar list-toolbar">
+                    <button type="submit" class="btn btn-primary"><i class="fa fa-save"></i> Save</button>
+                </div>
+            </form>
+        </div>
+    </div>
+</div>
+@stop

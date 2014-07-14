@@ -2,16 +2,33 @@
 
 
 Route::get('/', array('uses' => 'HomeController@index'));
+Route::get('/section/{name}', array('uses' => 'HomeController@section'));
+
+Route::get('/cloth/{id}', array('uses' => 'ClothController@show'));
+
+
+// Available resources
+Route::get('/api/markers', array('uses' => 'GoogleMarkerResource@index'));
 
 Route::get('/admin', function() {
-    return Redirect::to('/admin/shipping/create');
+    return Redirect::to('/admin/help');
 });
 
 Route::group(array('before' => 'auth.virtual'), function() {
 
-    Route::controller('/admin/shipping', 'AdminShippingController');
-    Route::controller('/admin/image', 'AdminImageController');
-    Route::controller('/admin/section', 'AdminSectionController');
+    Route::controller('/admin/help'                     , 'Admin\HelpController');
+
+    Route::controller('/admin/shipping'                 , 'Admin\ShippingController');
+    Route::controller('/admin/image'                    , 'Admin\ImageController');
+    Route::controller('/admin/section'                  , 'Admin\SectionController');
+    Route::controller('/admin/company-service'          , 'Admin\CompanyServiceController');
+    Route::controller('/admin/business-service'         , 'Admin\BusinessServiceController');
+    Route::controller('/admin/choose-reason'            , 'Admin\ChooseReasonController');
+    Route::controller('/admin/business-information'     , 'Admin\BusinessInformationController');
+    Route::controller('/admin/food-material'            , 'Admin\FoodMaterialController');
+    Route::controller('/admin/settings'                 , 'Admin\SettingsController');
+    Route::controller('/admin/map'                      , 'Admin\MapController');
+    Route::controller('/admin/cloth'                    , 'Admin\ClothController');
 });
 
 
@@ -28,17 +45,6 @@ Route::post('/admin/login', function() {
     return Redirect::back()->with('error', 'Login information is incorrect');
 });
 
-
-Route::get('/test', function()
-{
-    $images = \Shipping\ShippingService::where('id', '!=', 0)->first()->images;
-
-    foreach($images as $image)
-    {
-        echo '<img src="'.$image->addOperation('grab', 70, 70)->cached_url.'" />';
-        echo '<br/><hr/>';
-    }
-});
 
 Route::get('/artisan-command', function()
 {

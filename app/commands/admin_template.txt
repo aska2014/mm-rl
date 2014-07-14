@@ -1,0 +1,92 @@
+<?php namespace Admin;
+
+use Redirect, View, Input, EmptyClass;
+
+class {class}Controller extends \BaseController {
+
+    /**
+     * @param {class} ${variablePlural}
+     */
+    public function __construct({class} ${variablePlural})
+    {
+        $this->{variablePlural} = ${variablePlural};
+    }
+
+    /**
+     * Display all resources
+     */
+    public function getIndex()
+    {
+        ${variablePlural} = $this->{variablePlural}->orderBy('id', 'DESC')->get();
+
+        return View::make('admin.{view}.all', compact('{variablePlural}'));
+    }
+
+    /**
+     * Display one resource
+     */
+    public function getOne($id)
+    {
+        ${variable} = $this->{variablePlural}->findOrFail($id);
+
+        return View::make('admin.{view}.one', compact('{variable}'));
+    }
+
+    /**
+     * Create new resource
+     */
+    public function getCreate()
+    {
+        ${variable} = new EmptyClass();
+
+        return View::make('admin.{view}.add', compact('{variable}'));
+    }
+
+    /**
+     * Edit existing resource
+     */
+    public function getEdit($id)
+    {
+        ${variable} = $this->{variablePlural}->findOrFail($id);
+
+        return View::make('admin.{view}.add', compact('{variable}'));
+    }
+
+    /**
+     * Post create new resource
+     */
+    public function postCreate()
+    {
+        ${variable} = $this->{variablePlural}->create(Input::get('{input}'));
+
+        return Redirect::to('/admin/{url}/edit/'.${variable}->id)->with('success', '{title} created successfully');
+    }
+
+    /**
+     * Post edit existing resource
+
+     * @param $id
+     */
+    public function postEdit($id)
+    {
+        $inputs = Input::get('{input}', array());
+
+        ${variable} = $this->{variablePlural}->findOrFail($id);
+
+        ${variable}->update($inputs);
+
+        return Redirect::back()->with('success', '{title} updated successfully');
+    }
+
+    /**
+     * Delete existing resource
+
+     * @param $id
+     */
+    public function getDelete($id)
+    {
+        $this->{variablePlural}->findOrFail($id)->delete();
+
+        return Redirect::to('/admin/{url}')->with('success', '{title} deleted successfully');
+    }
+}

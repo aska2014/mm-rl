@@ -1,6 +1,8 @@
-<?php
+<?php namespace Admin;
 
-class AdminShippingController extends BaseController {
+use Redirect, View, Input, EmptyClass;
+
+class ShippingController extends \BaseController {
 
     /**
      * @param \Shipping\ShippingService $services

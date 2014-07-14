@@ -84,3 +84,6 @@ require app_path().'/filters.php';
 
 
 require app_path().'/sections.php';
+
+
+require app_path().'/admin.menu.php';
