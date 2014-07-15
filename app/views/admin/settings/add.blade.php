@@ -78,7 +78,7 @@
 
                 <hr/>
 
-                <h2>Emails to notify users contact us</h2><br/>
+                <h2>Emails to notify when users contact us</h2><br/>
 
                 <div class="form-group">
                     <label>Emails <small>Seperate with comma ,</small></label>
