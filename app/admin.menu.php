@@ -82,10 +82,17 @@ View::composer('admin.template', function($view)
         )
     );
     $headerItems[] = array(
+        'title' => 'Messages',
+        'icon'  => 'inbox',
+        'items' => array(
+            'Display all' => 'message'
+        )
+    );
+    $headerItems[] = array(
         'title' => 'Website settings',
         'icon'  => 'gear',
         'items' => array(
-            'Edit settings' => 'settings/edit'
+            'Edit settings' => 'settings/edit',
         )
     );
 

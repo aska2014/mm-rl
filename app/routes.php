@@ -30,6 +30,7 @@ Route::group(array('before' => 'auth.virtual'), function() {
     Route::controller('/admin/settings'                 , 'Admin\SettingsController');
     Route::controller('/admin/map'                      , 'Admin\MapController');
     Route::controller('/admin/cloth'                    , 'Admin\ClothController');
+    Route::controller('/admin/message'                  , 'Admin\MessageController');
 });
 
 

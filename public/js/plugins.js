@@ -549,6 +549,7 @@ $(document).ready(function() {
 				var formInput = $(this).serialize();
 				$.post($(this).attr('action'),formInput, function(data){
 					$('.mail-message').removeClass('not-visible-message').addClass('visible-message');
+                    $("form#contact-us").find("#submit").hide();
 					return false;
 				});
 			}
