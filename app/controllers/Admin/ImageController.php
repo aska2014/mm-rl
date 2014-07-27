@@ -18,7 +18,9 @@ class ImageController extends \BaseController {
      */
     public function getDelete($id)
     {
-        $image = $this->images->findOrFail($id);
+        $image = $this->images->find($id);
+
+        if(! $image) return Redirect::back()->with('error', 'Image doesn\'t exist');
 
         $image->delete();
 
