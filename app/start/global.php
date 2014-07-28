@@ -53,12 +53,6 @@ App::error(function(Exception $exception, $code)
     Log::error($exception);
 });
 
-
-App::missing(function(Exception $exception)
-{
-    return '404 NOT Found. <a href="/">Go to home page</a>';
-});
-
 /*
 |--------------------------------------------------------------------------
 | Maintenance Mode Handler
